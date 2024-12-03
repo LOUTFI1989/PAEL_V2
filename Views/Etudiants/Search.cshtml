@@ -1,0 +1,62 @@
+﻿@model IEnumerable<PAEL_V2.Models.Etudiant>
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Etudiant</h1>
+
+<p>
+    <a asp-action="Create">Ajouter un autre etudiant</a>
+</p>
+
+@if (Model.Any())
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateInscription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateInscription)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EtudiantId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EtudiantId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EtudiantId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+}
+else
+{
+    <p>Aucun étudiant trouvé pour votre recherche.</p>
+
+}

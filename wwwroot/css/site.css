@@ -1,0 +1,154 @@
+/* Style général */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+/* Conteneur principal */
+.container {
+    max-width: 80%; /* Limite la largeur du contenu */
+    margin: auto; /* Centre le conteneur */
+    background: white; /* Couleur de fond blanche pour le conteneur */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre pour un effet de profondeur */
+}
+
+/* Optionnel: Ajuster la hauteur maximale du logo */
+.navbar-brand img {
+    max-height: 30px; /* Réduit la hauteur maximale du logo */
+    width: auto; /* Conserve le ratio d'aspect de l'image */
+}
+
+/* En-tête et bannière */
+.header {
+    background-color: #35424a;
+    color: white;
+    padding: 20px 0;
+}
+
+/* Styles de la bannière */
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+    .banner-text h1 {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    .banner-text p {
+        font-size: 1.2em;
+    }
+
+/* Conteneur principal */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section d'introduction */
+.intro {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+    .intro h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #007bff; /* Couleur du titre */
+    }
+
+    .intro p {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+/* Section des fonctionnalités */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+    .feature h3 {
+        color: #007bff; /* Couleur des sous-titres */
+    }
+
+    .feature p {
+        color: #555;
+    }
+
+    /* Effet au survol */
+    .feature:hover {
+        transform: scale(1.05);
+    }
+
+/* Boutons (si vous souhaitez en ajouter dans le futur) */
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+/* Titres principaux */
+h1, h2 {
+    color: #333; /* Couleur des titres */
+}
+
+/* Style pour les listes */
+ul {
+    margin: 0; /* Supprime la marge par défaut */
+    padding-left: 20px; /* Ajoute un espacement à gauche pour les listes */
+}
+
+/* Style pour les paragraphes */
+p {
+    margin: 15px 0; /* Espacement vertical entre les paragraphes */
+}
+
+/* Lien de contact */
+strong {
+    color: #007bff; /* Couleur bleu pour le contact */
+}

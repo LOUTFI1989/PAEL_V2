@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PAEL_V2.Models.Cours>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Formulaire de recherche -->
+<form action="/Cours/SearchCours" method="get">
+    <input type="text" name="searchTerm" placeholder="Title, Description ou CoursId" required />
+    <button type="submit">Rechercher</button>
+</form>
+<br />
+
+<p>
+    <a asp-action="Create">Ajouter un cours</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CoursId">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.CoursId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CoursId">Suprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+

@@ -1,0 +1,27 @@
+﻿@model PAEL_V2.Models.Inscription
+
+@{
+    ViewData["Title"] = "Supprimer l'Inscription";
+}
+
+<h2>Supprimer l'Inscription</h2>
+
+<h3>Voulez-vous vraiment supprimer cette inscription ?</h3>
+<div>
+    <h4>Inscription</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Formation</dt>
+        <dd class="col-sm-10">@Model.FormationNom</dd>
+
+        <dt class="col-sm-2">Étudiant</dt>
+        <dd class="col-sm-10">@Model.EtudiantNom</dd>
+
+        <dt class="col-sm-2">Date d'Inscription</dt>
+        <dd class="col-sm-10">@Model.DateInscription.ToShortDateString()</dd>
+    </dl>
+</div>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="InscriptionId" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<PAEL_V2.Models.Formation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- Formulaire de recherche -->
+<form action="/Formations/SearchFormation" method="get">
+    <input type="text" name="searchTerm" placeholder="FormationId, Nom" required />
+    <button type="submit">Rechercher</button>
+</form>
+
+<br/>
+
+<p>
+    <a asp-action="Create">Ajouter une formation</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDebut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFin)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDebut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFin)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.FormationId">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.FormationId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FormationId">Suprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

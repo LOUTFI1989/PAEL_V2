@@ -1,0 +1,26 @@
+﻿@model PAEL_V2.Models.Inscription
+
+@{
+    ViewData["Title"] = "Modifier l'Inscription";
+}
+
+<h2>Modifier l'Inscription</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="InscriptionId" />
+
+    <div class="form-group">
+        <label asp-for="Formation"></label>
+        <select asp-for="FormationId" class="form-control" asp-items="ViewBag.FormationId"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Etudiant"></label>
+        <select asp-for="EtudiantId" class="form-control" asp-items="ViewBag.EtudiantId"></select>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateInscription"></label>
+        <input asp-for="DateInscription" class="form-control" type="date" />
+    </div>
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

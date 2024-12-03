@@ -1,0 +1,37 @@
+﻿@model IEnumerable<PAEL_V2.Models.Inscription>
+
+@{
+    ViewData["Title"] = "Inscriptions";
+}
+
+<h2>Liste des Inscriptions</h2>
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Formation</th>
+            <th>Étudiant</th>
+            <th>Date d'Inscription</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FormationNom</td>
+                <td>@item.EtudiantNom  </td>
+                <td>@item.DateInscription.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.InscriptionId">Détails</a> |
+                    <a asp-action="Edit" asp-route-id="@item.InscriptionId">Modifier</a> |
+                    <a asp-action="Delete" asp-route-id="@item.InscriptionId">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Ajouter une inscription</a>

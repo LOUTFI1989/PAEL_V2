@@ -1,0 +1,25 @@
+﻿@model PAEL_V2.Models.Inscription
+
+@{
+    ViewData["Title"] = "Détails de l'Inscription";
+}
+
+<h2>Détails de l'Inscription</h2>
+
+<div>
+    <h4>Inscription</h4>
+    <dl class="row">
+        <dt class="col-sm-2">Formation</dt>
+        <dd class="col-sm-10">@Model.FormationNom</dd> <!-- Correction ici -->
+
+        <dt class="col-sm-2">Étudiant</dt>
+        <dd class="col-sm-10">@Model.EtudiantNom</dd> <!-- Correction ici -->
+
+        <dt class="col-sm-2">Date d'Inscription</dt>
+        <dd class="col-sm-10">@Model.DateInscription.ToShortDateString()</dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.InscriptionId" class="btn btn-primary">Modifier</a>
+    <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+</div>
